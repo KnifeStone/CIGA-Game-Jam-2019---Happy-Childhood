@@ -42,7 +42,17 @@
   ],
   "design-resolution-height": 720,
   "design-resolution-width": 1280,
-  "excluded-modules": [],
+  "excluded-modules": [
+    "Canvas Renderer",
+    "Mask",
+    "Graphics",
+    "TiledMap",
+    "Spine Skeleton",
+    "DragonBones",
+    "VideoPlayer",
+    "WebView",
+    "Native Socket"
+  ],
   "facebook": {
     "appID": "",
     "audience": {
