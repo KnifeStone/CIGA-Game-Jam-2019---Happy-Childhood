@@ -1,3 +1,5 @@
+import FirstAudioSetting from "./first/FirstAudioSetting";
+
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -11,12 +13,18 @@
 export default class AudioUtils {
 
     static playBgmMain(){
+        if(FirstAudioSetting.getAudioStatus() != "true"){
+            return
+        }
         cc.audioEngine.stopMusic()
         let clip = cc.loader.getRes("audio/bgm_main",cc.AudioClip)
         cc.audioEngine.playMusic(clip,true)
     }
 
     static playBgmGame(){
+        if(FirstAudioSetting.getAudioStatus() != "true"){
+            return
+        }
         cc.audioEngine.stopMusic()
         let clip = cc.loader.getRes("audio/bgm_game",cc.AudioClip)
         cc.audioEngine.playMusic(clip,true)
